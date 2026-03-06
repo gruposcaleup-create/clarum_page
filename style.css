@@ -282,8 +282,51 @@ a:hover,
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 60%;
   z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 100%;
+  }
+}
+
+.hero-image-right {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 110%;
+  max-width: 60%;
+  object-fit: contain;
+  z-index: 0;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .hero-image-right {
+    opacity: 0.4;
+    right: -15%;
+    max-width: 80%;
+    height: 110%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image-right {
+    opacity: 0.2;
+    right: -25%;
+    max-width: 100%;
+    height: 100%;
+  }
 }
 
 /* Featured Projects Grid */
