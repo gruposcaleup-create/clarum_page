@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Research - Clarum Group</title>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <!-- Global Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="/assets/logo.png" alt="Clarum Group" style="height: 72px; width: auto;">
+                <span>Clarum Group</span>
+            </a>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/research.html" class="nav-link" style="color: var(--accent-color);">Our Research</a>
+                    <div class="dropdown">
+                        <a href="/research.html#machine-learning">Advanced Machine Learning</a>
+                        <a href="/research.html#quantum-computing">Quantum Computing</a>
+                        <a href="/research.html#hci">Human-Computer Interaction</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/publications.html" class="nav-link">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/people.html" class="nav-link">People</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/careers.html" class="nav-link">Careers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                </li>
+            </ul>
+            <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section section-light" style="padding-top: 160px; padding-bottom: var(--space-lg);">
+        <div class="container fade-up">
+            <h1>Our Research</h1>
+            <p style="max-width: 800px; font-size: 1.25rem;">
+                We believe in exploring fundamental scientific questions to unlock the full potential of artificial
+                intelligence. Discover our core pillars of innovation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Research Pillars (Interactive Tabs) -->
+    <section class="section section-grey" style="padding-top: var(--space-xl);">
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="tabs-container">
+                <!-- Navigation -->
+                <div class="tabs-nav" id="research-tabs-nav">
+                    <button class="tab-btn active" data-tab="ml">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        Advanced Machine Learning
+                    </button>
+                    <button class="tab-btn" data-tab="qc">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(45 12 12)"></ellipse>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-45 12 12)"></ellipse>
+                        </svg>
+                        Quantum Computing
+                    </button>
+                    <button class="tab-btn" data-tab="hci">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                        Human-Computer Interaciton
+                    </button>
+                </div>
+
+                <!-- Content Area -->
+                <div class="tabs-content" id="research-tabs-content">
+
+                    <!-- Tab Pane ML -->
+                    <div class="tab-pane active fade-up visible" id="tab-ml">
+                        <div class="tab-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop"
+                                alt="Machine Learning Research" class="tab-content-img">
+                        </div>
+                        <h2>Advanced Machine Learning</h2>
+                        <p>Our foundational machine learning research is focused on creating algorithms that generalize
+                            across multiple domains with high efficiency. We are pushing the boundaries of generative
+                            models, multi-modal perception, and self-supervised architectures to achieve cognitive
+                            breakthroughs.</p>
+                        <a href="/publications.html" class="btn btn-primary" style="margin-top: var(--space-sm);">View
+                            Papers</a>
+                    </div>
+
+                    <!-- Tab Pane Quantum -->
+                    <div class="tab-pane fade-up" id="tab-qc">
+                        <div class="tab-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1200&auto=format&fit=crop"
+                                alt="Quantum Computing Research" class="tab-content-img">
+                        </div>
+                        <h2>Quantum Computing</h2>
+                        <p>Our quantum intelligence lab explores algorithm design utilizing qubit topologies. We aim to
+                            fundamentally alter computational complexity limits by hybridizing neural networks with
+                            quantum
+                            states to solve traditionally intractable problems in optimization and molecular simulation.
+                        </p>
+                        <a href="/publications.html" class="btn btn-primary" style="margin-top: var(--space-sm);">View
+                            Papers</a>
+                    </div>
+
+                    <!-- Tab Pane HCI -->
+                    <div class="tab-pane fade-up" id="tab-hci">
+                        <div class="tab-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop"
+                                alt="HCI Research" class="tab-content-img">
+                        </div>
+                        <h2>Human-Computer Interaction</h2>
+                        <p>We redefine how humans interplay with machine intelligence. Through spatial computing,
+                            brain-computer interfaces, and deeply empathetic conversational agents, we strive to make
+                            technology an extension of the human mind, seamless and universally accessible.</p>
+                        <a href="/publications.html" class="btn btn-primary" style="margin-top: var(--space-sm);">View
+                            Papers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="relative bg-gray-950 pt-20 pb-10 overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-blue-400 to-cyan-400"></div>
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 pb-14 border-b border-white/10">
+                <div class="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
+                    <a href="/" class="text-white text-2xl font-bold tracking-tight block mb-5">Clarum<span
+                            class="text-accent">.</span></a>
+                    <p class="text-white/70 text-sm leading-relaxed max-w-xs">Pioneering research at the intersection of
+                        artificial intelligence, quantum computing, and human-computer interaction.</p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all duration-300"
+                            aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16h-4.267z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all duration-300"
+                            aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z">
+                                </path>
+                                <path d="M8 11l0 5"></path>
+                                <path d="M8 8l0 .01"></path>
+                                <path d="M12 16l0 -5"></path>
+                                <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                            </svg></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all duration-300"
+                            aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-xs uppercase tracking-[0.15em] mb-5">Focus Areas</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/research.html"
+                                class="text-white/70 hover:text-white transition-colors duration-200">Machine
+                                Learning</a></li>
+                        <li><a href="/research.html"
+                                class="text-white/70 hover:text-white transition-colors duration-200">Quantum
+                                Computing</a></li>
+                        <li><a href="/research.html"
+                                class="text-white/70 hover:text-white transition-colors duration-200">Human-Computer
+                                Interaction</a></li>
+                        <li><a href="/research.html"
+                                class="text-white/70 hover:text-white transition-colors duration-200">Robotics &
+                                Perception</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-xs uppercase tracking-[0.15em] mb-5">Resources</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/publications.html"
+                                class="text-white/70 hover:text-white transition-colors duration-200">Publications</a>
+                        </li>
+                        <li><a href="/blog.html"
+                                class="text-white/70 hover:text-white transition-colors duration-200">Blog & News</a>
+                        </li>
+                        <li><a href="/people.html"
+                                class="text-white/70 hover:text-white transition-colors duration-200">Our People</a>
+                        </li>
+                        <li><a href="/careers.html"
+                                class="text-white/70 hover:text-white transition-colors duration-200">Open Positions</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-xs uppercase tracking-[0.15em] mb-5">Stay Updated</h4>
+                    <p class="text-white/60 text-sm mb-4">Get the latest research delivered to your inbox.</p>
+                    <form class="flex gap-2" onsubmit="event.preventDefault();"><input type="email"
+                            placeholder="you@email.com"
+                            class="bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent w-full transition-all duration-200" /><button
+                            type="submit"
+                            class="bg-accent hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg whitespace-nowrap transition-all duration-200 hover:shadow-lg hover:shadow-accent/25">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 text-sm gap-4">
+                <p class="text-white/50">&copy; 2026 Clarum Group. All rights reserved.</p>
+                <div class="flex gap-8"><a href="#"
+                        class="text-white/50 hover:text-white transition-colors duration-200">Terms</a><a href="#"
+                        class="text-white/50 hover:text-white transition-colors duration-200">Privacy</a><a href="#"
+                        class="text-white/50 hover:text-white transition-colors duration-200">Cookies</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarum Research Lab</title>
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <!-- Global Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px;">
+        <img src="/assets/logo.png" alt="Clarum Group" style="height: 72px; width: auto;">
+        <span>Clarum Group</span>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="/research.html" class="nav-link">Our Research</a>
+          <div class="dropdown">
+            <a href="/research.html#machine-learning">Advanced Machine Learning</a>
+            <a href="/research.html#quantum-computing">Quantum Computing</a>
+            <a href="/research.html#hci">Human-Computer Interaction</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="/publications.html" class="nav-link">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a href="/people.html" class="nav-link">People</a>
+        </li>
+        <li class="nav-item">
+          <a href="/careers.html" class="nav-link">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a href="/blog.html" class="nav-link">Blog</a>
+        </li>
+      </ul>
+      <div class="search-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content fade-up">
+        <h1>Clarum Research Lab</h1>
+        <h2>Advancing the frontiers of intelligence and technology</h2>
+        <p>We are dedicated to open scientific research to advance the state-of-the-art in artificial intelligence,
+          bringing the world closer together through breakthrough innovations.</p>
+        <a href="/research.html" class="btn btn-primary" style="margin-top: 1rem;">Explore Our Research</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="section section-grey">
+    <div class="container fade-up" style="position: relative; z-index: 1;">
+      <h3 style="margin-bottom: var(--space-md); font-size: 2rem;">Featured Projects</h3>
+      <div class="grid">
+
+        <!-- Project Card 1 -->
+        <div class="card">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop"
+              alt="AI Neural Network" class="card-image">
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Project Quantum Leap</h4>
+            <p class="card-desc">Advancing multi-modal learning architectures to seamlessly integrate vision, language,
+              and audio streams into a singular cohesive model.</p>
+            <a href="/research.html" class="card-link">Learn More &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="card">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"
+              alt="Cybernetics" class="card-image">
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Next-Gen Robotics</h4>
+            <p class="card-desc">Developing dexterous manipulation capabilities for humanoid robots using reinforcement
+              learning in simulated hyper-realistic environments.</p>
+            <a href="/research.html" class="card-link">Learn More &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="card">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
+              alt="Data Visualization" class="card-image">
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Optima Architecture</h4>
+            <p class="card-desc">An open-source foundational model framework optimized for edge-device deployment with
+              radical efficiency improvements.</p>
+            <a href="/research.html" class="card-link">Learn More &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Stats Counter -->
+  <section class="py-16 bg-accent">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+        <div class="fade-up">
+          <div class="text-4xl md:text-5xl font-bold tracking-tight" data-count="127">0</div>
+          <p class="mt-2 text-sm text-blue-100 uppercase tracking-wider">Published Papers</p>
+        </div>
+        <div class="fade-up" style="transition-delay: 100ms;">
+          <div class="text-4xl md:text-5xl font-bold tracking-tight" data-count="42">0</div>
+          <p class="mt-2 text-sm text-blue-100 uppercase tracking-wider">Active Projects</p>
+        </div>
+        <div class="fade-up" style="transition-delay: 200ms;">
+          <div class="text-4xl md:text-5xl font-bold tracking-tight" data-count="89">0</div>
+          <p class="mt-2 text-sm text-blue-100 uppercase tracking-wider">Researchers</p>
+        </div>
+        <div class="fade-up" style="transition-delay: 300ms;">
+          <div class="text-4xl md:text-5xl font-bold tracking-tight" data-count="15">0</div>
+          <p class="mt-2 text-sm text-blue-100 uppercase tracking-wider">Global Labs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blue Accent Card Capabilities -->
+  <section class="section section-light">
+    <div class="container fade-up" style="max-width: 1200px; margin: 0 auto;">
+      <div
+        style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-lg);">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-accent">Our Capabilities</span>
+          <h2 style="margin-top: 8px;">What Defines Our Research</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card Variation 1: Solid Blue -->
+        <div
+          class="group relative overflow-hidden rounded-xl bg-accent p-8 text-white transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20 cursor-pointer">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          </div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Foundational Models</h3>
+            <p class="text-blue-100 text-sm leading-relaxed">Building large-scale transformer architectures that push
+              the frontier of multi-modal reasoning and generalization across 14+ languages.</p>
+            <a href="/research.html"
+              class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-white/80 hover:text-white transition-colors">
+              Explore <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card Variation 2: Outline with Glow -->
+        <div
+          class="group relative overflow-hidden rounded-xl border-2 border-accent/30 bg-white p-8 transition-all duration-500 hover:-translate-y-2 hover:border-accent hover:shadow-xl hover:shadow-blue-500/10 cursor-pointer">
+          <div
+            class="absolute -top-20 -right-20 w-40 h-40 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-700">
+          </div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6 text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Quantum Advantage</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Developing hybrid quantum-classical algorithms that solve
+              optimization problems exponentially faster than traditional computation.</p>
+            <a href="/research.html"
+              class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-accent hover:text-blue-700 transition-colors">
+              Explore <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card Variation 3: Gradient Border Glow -->
+        <div
+          class="group relative rounded-xl p-[2px] bg-gradient-to-br from-accent via-blue-400 to-cyan-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20 cursor-pointer">
+          <div class="rounded-[10px] bg-white p-8 h-full">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-accent to-cyan-400 rounded-lg flex items-center justify-center mb-6 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Human-AI Synergy</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Designing adaptive interfaces that enable deeply intuitive
+              collaboration between human cognitive processes and autonomous systems.</p>
+            <a href="/research.html"
+              class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-accent hover:text-blue-700 transition-colors">
+              Explore <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Image Showcase -->
+  <section class="section section-light">
+    <div class="container fade-up">
+      <div
+        style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-md);">
+        <div>
+          <h3 style="font-size: 2rem;">Inside the Lab</h3>
+          <p style="margin-bottom: 0;">Glimpses into our advanced research facilities and active experiments.</p>
+        </div>
+        <div class="gallery-nav">
+          <button class="gallery-btn" id="gallery-prev" aria-label="Previous Image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="gallery-btn" id="gallery-next" aria-label="Next Image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gallery-container">
+        <!-- Main Image -->
+        <div class="gallery-main">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop"
+            alt="Lab environment" id="gallery-main-img" class="gallery-image">
+          <div class="gallery-caption" id="gallery-caption">Advanced Robotics Testing Facility</div>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="gallery-thumbnails" id="gallery-thumbnails">
+          <!-- Thumbnails injected via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Footer -->
+  <footer class="relative bg-gray-950 pt-20 pb-10 overflow-hidden">
+    <!-- Blue accent top stripe -->
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-blue-400 to-cyan-400"></div>
+
+    <div class="container mx-auto px-6 max-w-7xl">
+
+      <!-- Top Row: Columns -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 pb-14 border-b border-white/10">
+
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
+          <a href="/" class="text-white text-2xl font-bold tracking-tight block mb-5">Clarum<span
+              class="text-accent">.</span></a>
+          <p class="text-white/70 text-sm leading-relaxed max-w-xs">Pioneering research at the intersection of
+            artificial intelligence, quantum computing, and human-computer interaction.</p>
+          <!-- Social Icons -->
+          <div class="flex gap-4 mt-6">
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all duration-300"
+              aria-label="Twitter / X">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16h-4.267z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all duration-300"
+              aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                <path d="M8 11l0 5"></path>
+                <path d="M8 8l0 .01"></path>
+                <path d="M12 16l0 -5"></path>
+                <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all duration-300"
+              aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Focus Areas -->
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-[0.15em] mb-5">Focus Areas</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/research.html" class="text-white/70 hover:text-white transition-colors duration-200">Machine
+                Learning</a></li>
+            <li><a href="/research.html" class="text-white/70 hover:text-white transition-colors duration-200">Quantum
+                Computing</a></li>
+            <li><a href="/research.html"
+                class="text-white/70 hover:text-white transition-colors duration-200">Human-Computer Interaction</a>
+            </li>
+            <li><a href="/research.html" class="text-white/70 hover:text-white transition-colors duration-200">Robotics
+                & Perception</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-[0.15em] mb-5">Resources</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/publications.html"
+                class="text-white/70 hover:text-white transition-colors duration-200">Publications</a></li>
+            <li><a href="/blog.html" class="text-white/70 hover:text-white transition-colors duration-200">Blog &
+                News</a></li>
+            <li><a href="/people.html" class="text-white/70 hover:text-white transition-colors duration-200">Our
+                People</a></li>
+            <li><a href="/careers.html" class="text-white/70 hover:text-white transition-colors duration-200">Open
+                Positions</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-[0.15em] mb-5">Stay Updated</h4>
+          <p class="text-white/60 text-sm mb-4">Get the latest research delivered to your inbox.</p>
+          <form class="flex gap-2" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="you@email.com"
+              class="bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent w-full transition-all duration-200" />
+            <button type="submit"
+              class="bg-accent hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg whitespace-nowrap transition-all duration-200 hover:shadow-lg hover:shadow-accent/25">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Legal -->
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 text-sm gap-4">
+        <p class="text-white/50">&copy; 2026 Clarum Group. All rights reserved.</p>
+        <div class="flex gap-8">
+          <a href="#" class="text-white/50 hover:text-white transition-colors duration-200">Terms</a>
+          <a href="#" class="text-white/50 hover:text-white transition-colors duration-200">Privacy</a>
+          <a href="#" class="text-white/50 hover:text-white transition-colors duration-200">Cookies</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
