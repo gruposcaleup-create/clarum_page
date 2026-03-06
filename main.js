@@ -158,59 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (pubList && spinner) {
 
-    // Mock Database of Publications
-    const papers = [
-      {
-        id: 1,
-        title: "Scaling Laws for Autoregressive Generative Modeling",
-        authors: "Dr. Alan Smith, Jane Doe",
-        date: "October 12, 2026",
-        topic: "ml",
-        year: "2026",
-        authorId: "smith",
-        abstract: "<p>This paper empirically investigates the scaling laws of autoregressive generative models across multiple modalities. We demonstrate that model performance, measured by cross-entropy loss, scales predictably as a power-law with model size, dataset size, and the amount of compute used for training.</p><p>Furthermore, we identify optimal parameter-to-data allocation strategies, suggesting that current state-of-the-art models are significantly undertrained relative to their size. These findings provide a predictive framework for scaling future foundational models efficiently.</p>"
-      },
-      {
-        id: 2,
-        title: "Quantum Entanglement as a Resource for Neural Architecture Search",
-        authors: "Wei Zhang",
-        date: "September 05, 2026",
-        topic: "quantum",
-        year: "2026",
-        authorId: "zhang",
-        abstract: "<p>Neural Architecture Search (NAS) is computationally prohibitive for large-scale models. We propose a novel quantum-classical hybrid algorithm that leverages quantum entanglement to explore the vast topological space of neural network architectures.</p><p>By mapping neural network topologies to quantum states, our approach achieves super-polynomial speedups in identifying optimal architectures compared to classical evolutionary or reinforcement learning algorithms.</p>"
-      },
-      {
-        id: 3,
-        title: "Zero-shot Policy Transfer in Dexterous Robot Hands",
-        authors: "Jane Doe, Wei Zhang",
-        date: "June 22, 2025",
-        topic: "robotics",
-        year: "2025",
-        authorId: "doe",
-        abstract: "<p>Achieving human-level dexterity in robotic manipulation remains a formidable challenge, largely due to the sim-to-real gap. We introduce a unified reinforcement learning framework capable of zero-shot policy transfer from simulation to physical hardware.</p><p>Our method utilizes a combination of domain randomization and highly accurate physics simulation of tactile sensors, enabling a multi-fingered robotic hand to perform complex in-hand object reorientation without any real-world fine-tuning.</p>"
-      },
-      {
-        id: 4,
-        title: "Self-Supervised Representation Learning for High-Res Computer Vision",
-        authors: "Dr. Alan Smith",
-        date: "March 10, 2024",
-        topic: "cv",
-        year: "2024",
-        authorId: "smith",
-        abstract: "<p>We present a novel self-supervised learning paradigm tailored for ultra-high-resolution imagery (up to 4K). Traditional contrastive learning approaches fail at this scale due to memory constraints and the loss of local contextual features.</p><p>Our methodology employs a sparse attention mechanism and a multi-scale patch-based pretext task. This allows the model to learn robust semantic representations capable of state-of-the-art performance on downstream tasks like exact pixel segmentation and anomaly detection.</p>"
-      },
-      {
-        id: 5,
-        title: "Large Language Models as Reasoning Agents",
-        authors: "Jane Doe",
-        date: "January 14, 2026",
-        topic: "nlp",
-        year: "2026",
-        authorId: "doe",
-        abstract: "<p>While LLMs excel at pattern recognition and generation, multi-step logical reasoning remains brittle. This paper introduces 'Thought-Chain Execution', a prompting methodology that forces the model to decompose complex problems into explicit intermediate steps.</p><p>Our empirical results show a 40% absolute improvement in zero-shot accuracy on standard mathematical and symbolic reasoning benchmarks, establishing LLMs as reliable reasoning agents rather than stochastic parrots.</p>"
-      }
-    ];
+    // Mock Database of Publications (Empited)
+    const papers = [];
 
     // Modal Elements
     const modal = document.getElementById('paper-modal');
