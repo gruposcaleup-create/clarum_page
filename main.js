@@ -395,27 +395,26 @@ document.addEventListener('DOMContentLoaded', () => {
     gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
     document.body.appendChild(gtScript);
 
-    // CSS to hide Google widgets and disable body shifting
-    const style = document.createElement('style');
-    style.innerHTML = `
-      .goog-te-banner-frame.skiptranslate { display: none !important; }
-      body { top: 0px !important; position: static !important; }
-      .goog-tooltip { border: none !important; display: none !important; box-shadow: none !important; }
-      .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
-      #goog-gt-tt { display: none !important; }
-    `;
-    document.head.appendChild(style);
-
     // Language switch logic
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const currentIsEs = document.cookie.includes('googtrans=/en/es');
-      const newValue = currentIsEs ? '/en/en' : '/en/es';
 
-      // Set the translation cookies targeting paths and domains
-      document.cookie = `googtrans=${newValue}; path=/`;
-      document.cookie = `googtrans=${newValue}; path=/; domain=${window.location.hostname}`;
-      document.cookie = `googtrans=${newValue}; path=/; domain=.${window.location.hostname}`; // wildcard
+      if (currentIsEs) {
+        // Clear cookies to go back to English
+        const deleteCookie = (name) => {
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}`;
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname}`;
+        };
+        deleteCookie('googtrans');
+      } else {
+        // Set to Spanish
+        const newValue = '/en/es';
+        document.cookie = `googtrans=${newValue}; path=/`;
+        document.cookie = `googtrans=${newValue}; path=/; domain=${window.location.hostname}`;
+        document.cookie = `googtrans=${newValue}; path=/; domain=.${window.location.hostname}`;
+      }
 
       // Refresh to apply Google Translate
       window.location.reload();

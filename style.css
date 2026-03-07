@@ -984,3 +984,39 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Global Language Translation Hiding (Google Translate) --- */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-menu-frame,
+iframe.skiptranslate,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  top: -100px !important;
+  z-index: -1000 !important;
+  pointer-events: none !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+  margin-top: 0px !important;
+}
+
+html {
+  top: 0px !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
