@@ -1,0 +1,286 @@
+'use client';
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+
+export default function GlobalLogic() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // 1. Viewport Animation (Intersection Observer)
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    if (fadeElements.length > 0) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+      };
+
+      const fadeObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      fadeElements.forEach(el => fadeObserver.observe(el));
+    }
+
+    // 1b. Animated Counter (Stats Section)
+    const counterElements = document.querySelectorAll('[data-count]');
+    if (counterElements.length > 0) {
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-count'), 10);
+            const duration = 1500; // ms
+            const startTime = performance.now();
+
+            const animate = (currentTime) => {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(eased * target);
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                el.textContent = target + '+';
+              }
+            };
+            requestAnimationFrame(animate);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counterElements.forEach(el => counterObserver.observe(el));
+    }
+
+    // 2. Parallax Effect on Hero Background
+    const heroBg = document.getElementById('hero-bg');
+    if (heroBg) {
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        heroBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+
+    // 3. Image Showcase Gallery Logic (Home Page)
+    const galleryMainImg = document.getElementById('gallery-main-img');
+    const galleryCaption = document.getElementById('gallery-caption');
+    const galleryThumbnailsContainer = document.getElementById('gallery-thumbnails');
+    const btnPrev = document.getElementById('gallery-prev');
+    const btnNext = document.getElementById('gallery-next');
+
+    if (galleryMainImg && galleryThumbnailsContainer) {
+      const galleryData = [
+        {
+          src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+          thumb: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=300&auto=format&fit=crop",
+          caption: "Advanced Robotics Testing Facility"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
+          thumb: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=300&auto=format&fit=crop",
+          caption: "Neural Network Visualization Center"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+          thumb: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=300&auto=format&fit=crop",
+          caption: "Computational Data Processing Core"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1531297172867-4f4013626d1e?q=80&w=1200&auto=format&fit=crop",
+          thumb: "https://images.unsplash.com/photo-1531297172867-4f4013626d1e?q=80&w=300&auto=format&fit=crop",
+          caption: "Hardware Prototyping Workshop"
+        }
+      ];
+
+      let activeIndex = 0;
+
+      const renderThumbnails = () => {
+        galleryThumbnailsContainer.innerHTML = '';
+        galleryData.forEach((item, index) => {
+          const thumb = document.createElement('div');
+          thumb.className = `gallery-thumb ${index === activeIndex ? 'active' : ''}`;
+          thumb.innerHTML = `<img src="${item.thumb}" alt="Thumbnail ${index + 1}">`;
+
+          thumb.addEventListener('click', () => {
+            if (activeIndex !== index) {
+              updateGallery(index);
+            }
+          });
+
+          galleryThumbnailsContainer.appendChild(thumb);
+        });
+      };
+
+      const updateGallery = (newIndex) => {
+        galleryMainImg.style.opacity = '0';
+        setTimeout(() => {
+          activeIndex = newIndex;
+          galleryMainImg.src = galleryData[activeIndex].src;
+          galleryCaption.textContent = galleryData[activeIndex].caption;
+          renderThumbnails();
+          const fadeTarget = document.getElementById('gallery-main-img');
+          if (fadeTarget) fadeTarget.style.opacity = '1';
+        }, 300);
+      };
+
+      if (btnPrev && btnNext) {
+        btnPrev.addEventListener('click', () => {
+          const newIndex = activeIndex === 0 ? galleryData.length - 1 : activeIndex - 1;
+          updateGallery(newIndex);
+        });
+        btnNext.addEventListener('click', () => {
+          const newIndex = activeIndex === galleryData.length - 1 ? 0 : activeIndex + 1;
+          updateGallery(newIndex);
+        });
+      }
+      renderThumbnails();
+    }
+
+    // 4. Publications AJAX Loading Simulation
+    const pubList = document.getElementById('publication-list');
+    const spinner = document.getElementById('loading-spinner');
+
+    if (pubList && spinner) {
+      const papers = [];
+      const modal = document.getElementById('paper-modal');
+      const modalBackdrop = document.getElementById('modal-backdrop');
+      const modalClose = document.getElementById('modal-close');
+
+      const closeModal = () => {
+        if (modal) {
+          modal.classList.remove('active');
+          document.body.classList.remove('modal-open');
+        }
+      };
+
+      if (modalClose && modalBackdrop) {
+        modalClose.addEventListener('click', closeModal);
+        modalBackdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+        });
+      }
+
+      const openModal = (paperId) => {
+        const paper = papers.find(p => p.id === parseInt(paperId));
+        if (!paper || !modal) return;
+        document.getElementById('modal-topic').textContent = paper.topic.toUpperCase();
+        document.getElementById('modal-title').textContent = paper.title;
+        document.getElementById('modal-meta').innerHTML = `${paper.authors} &middot; ${paper.date}`;
+        document.getElementById('modal-abstract').innerHTML = paper.abstract;
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+      };
+
+      const renderPapers = (data) => {
+        pubList.innerHTML = '';
+        if (data.length === 0) {
+          pubList.innerHTML = '<p>No publications found matching your criteria.</p>';
+          return;
+        }
+
+        data.forEach(paper => {
+          const item = document.createElement('div');
+          item.className = 'pub-card fade-up visible';
+          item.innerHTML = `
+            <h3 class="pub-title">${paper.title}</h3>
+            <div class="pub-meta">${paper.authors} &middot; ${paper.date}</div>
+            <div class="pub-actions">
+              <button class="btn btn-primary btn-read" data-id="${paper.id}">Read Paper Notes</button>
+              <a href="#" class="btn btn-primary" style="background-color: transparent; border-color: var(--divider-color); color: var(--text-primary);">Download</a>
+            </div>
+          `;
+          pubList.appendChild(item);
+        });
+
+        const readButtons = pubList.querySelectorAll('.btn-read');
+        readButtons.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const paperId = btn.getAttribute('data-id');
+            openModal(paperId);
+          });
+        });
+      };
+
+      let currentFilters = { topic: 'all', year: 'all', author: 'all' };
+
+      const filterPapers = () => {
+        return papers.filter(p => {
+          const topicMatch = currentFilters.topic === 'all' || p.topic === currentFilters.topic;
+          const yearMatch = currentFilters.year === 'all' || p.year === currentFilters.year;
+          const authorMatch = currentFilters.author === 'all' || p.authorId === currentFilters.author || (currentFilters.author === 'doe' && p.authors.includes("Jane Doe"));
+          return topicMatch && yearMatch && authorMatch;
+        });
+      };
+
+      const applyFilters = () => {
+        pubList.style.display = 'none';
+        spinner.classList.add('active');
+        setTimeout(() => {
+          const filtered = filterPapers();
+          renderPapers(filtered);
+          spinner.classList.remove('active');
+          pubList.style.display = 'flex';
+        }, 600);
+      };
+
+      renderPapers(papers);
+
+      const setupFilters = (filterId, filterKey) => {
+        const container = document.getElementById(filterId);
+        if (!container) return;
+        const links = container.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            currentFilters[filterKey] = link.getAttribute('data-filter');
+            applyFilters();
+          });
+        });
+      }
+      setupFilters('topic-filter', 'topic');
+      setupFilters('year-filter', 'year');
+      setupFilters('author-filter', 'author');
+    }
+
+    // 5. Interactive Tabs Logic (Research Page)
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    if (tabBtns.length > 0 && tabPanes.length > 0) {
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabPanes.forEach(p => {
+            p.classList.remove('active');
+            p.classList.remove('visible');
+          });
+          btn.classList.add('active');
+          const targetId = `tab-${btn.getAttribute('data-tab')}`;
+          const targetPane = document.getElementById(targetId);
+          if (targetPane) {
+            targetPane.classList.add('active');
+            setTimeout(() => {
+              targetPane.classList.add('visible');
+            }, 10);
+          }
+        });
+      });
+    }
+
+  }, [pathname]);
+
+  return null;
+}
