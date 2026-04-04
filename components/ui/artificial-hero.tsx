@@ -115,34 +115,34 @@ export const ArtificialHero = () => {
         centerX, centerY, radius * 1.5
       );
       
-      orbGradient.addColorStop(0, `hsla(${hue + 10}, 100%, 95%, 0.9)`);
-      orbGradient.addColorStop(0.2, `hsla(${hue + 20}, 90%, 80%, 0.7)`);
-      orbGradient.addColorStop(0.5, `hsla(${hue}, 70%, 50%, 0.4)`);
+      orbGradient.addColorStop(0, `hsla(0, 0%, 100%, 0.9)`); // Pure white core
+      orbGradient.addColorStop(0.2, `hsla(${hue}, 90%, 70%, 0.7)`); // Light blue
+      orbGradient.addColorStop(0.5, `hsla(${hue + 15}, 80%, 40%, 0.4)`); // Dark blue
       orbGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
       
       ctx.fillStyle = orbGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Bright center circle with glitch
+      // Bright center circle
       const centerRadius = radius * 0.3;
-      ctx.fillStyle = `hsla(${hue + 20}, 100%, 95%, 0.8)`;
+      ctx.fillStyle = `hsla(0, 0%, 100%, 0.95)`;
       ctx.beginPath();
       ctx.arc(centerX, centerY, centerRadius, 0, Math.PI * 2);
       ctx.fill();
       
       // Glitch effects on the orb
       if (shouldGlitch) {
-        // RGB separation effect
+        // RGB separation effect (modified to light/dark blue)
         ctx.globalCompositeOperation = 'screen';
         
-        // Red channel offset
-        ctx.fillStyle = `hsla(100, 100%, 50%, ${0.6 * glitchIntensity})`;
+        // Light blue offset
+        ctx.fillStyle = `hsla(195, 100%, 60%, ${0.6 * glitchIntensity})`;
         ctx.beginPath();
         ctx.arc(centerX + glitchOffset * 0.5, centerY, centerRadius, 0, Math.PI * 2);
         ctx.fill();
         
-        // Blue channel offset
-        ctx.fillStyle = `hsla(240, 100%, 50%, ${0.5 * glitchIntensity})`;
+        // Dark blue offset
+        ctx.fillStyle = `hsla(220, 100%, 50%, ${0.5 * glitchIntensity})`;
         ctx.beginPath();
         ctx.arc(centerX - glitchOffset * 0.5, centerY, centerRadius, 0, Math.PI * 2);
         ctx.fill();
@@ -164,7 +164,7 @@ export const ArtificialHero = () => {
         }
         
         // Pixelated corruption blocks
-        ctx.fillStyle = `rgba(255, 0, 255, ${0.4 * glitchIntensity})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.5 * glitchIntensity})`;
         for (let i = 0; i < 3; i++) {
           const blockX = centerX - radius + Math.random() * radius * 2;
           const blockY = centerY - radius + Math.random() * radius * 2;
@@ -174,7 +174,7 @@ export const ArtificialHero = () => {
       }
       
       // Outer ring with glitch distortion
-      ctx.strokeStyle = `hsla(${hue + 20}, 80%, 70%, 0.6)`;
+      ctx.strokeStyle = `hsla(${hue}, 80%, 70%, 0.6)`;
       ctx.lineWidth = 2;
       
       if (shouldGlitch) {
@@ -241,10 +241,10 @@ export const ArtificialHero = () => {
         centerX, centerY, Math.max(width, height) * 0.8
       );
       
-      const hue = 180 + params.atmosphereShift * 60;
-      bgGradient.addColorStop(0, `hsla(${hue + 40}, 80%, 60%, 0.4)`);
-      bgGradient.addColorStop(0.3, `hsla(${hue}, 60%, 40%, 0.3)`);
-      bgGradient.addColorStop(0.6, `hsla(${hue - 20}, 40%, 20%, 0.2)`);
+      const hue = 200 + params.atmosphereShift * 20; // Oscillates between light blue (200) and deep blue (220)
+      bgGradient.addColorStop(0, `hsla(${hue}, 80%, 60%, 0.3)`);
+      bgGradient.addColorStop(0.3, `hsla(${hue + 5}, 70%, 40%, 0.25)`);
+      bgGradient.addColorStop(0.6, `hsla(${hue + 15}, 60%, 20%, 0.15)`);
       bgGradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
       
       ctx!.fillStyle = bgGradient;
@@ -383,8 +383,8 @@ export const ArtificialHero = () => {
         </div>
       </div>
 
-      {/* Left side text */}
-      <div style={{
+      {/* Left side text - hidden on mobile */}
+      <div className="hidden md:block" style={{
         position: 'fixed',
         left: '2rem',
         top: '40%',
@@ -409,8 +409,8 @@ export const ArtificialHero = () => {
         </div>
       </div>
 
-      {/* Right side text */}
-      <div style={{
+      {/* Right side text - hidden on mobile */}
+      <div className="hidden md:block" style={{
         position: 'fixed',
         right: '2rem',
         top: '40%',

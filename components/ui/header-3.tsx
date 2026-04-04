@@ -151,12 +151,16 @@ export function Header() {
 						<Link href="/blog" className="text-sm font-light tracking-tight text-white/70 hover:text-white transition-colors">
 							Blog
 						</Link>
-						<Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black transition-all">
-							Sign In
-						</Button>
-						<Button className="bg-white text-black hover:bg-white/90 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-							Join Lab
-						</Button>
+						<Link href="/contact">
+							<Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black transition-all">
+								Contact
+							</Button>
+						</Link>
+						<Link href="/careers">
+							<Button className="bg-white text-black hover:bg-white/90 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+								Join Lab
+							</Button>
+						</Link>
 					</div>
 					
 					<Button
@@ -203,12 +207,16 @@ export function Header() {
 				</div>
 				
 				<div className="flex flex-col gap-3 pb-8">
-					<Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 py-6 text-base">
-						Sign In
-					</Button>
-					<Button className="w-full bg-white text-black py-6 text-base">
-						Join Lab
-					</Button>
+					<Link href="/contact" className="w-full">
+						<Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 py-6 text-base">
+							Contact
+						</Button>
+					</Link>
+					<Link href="/careers" className="w-full">
+						<Button className="w-full bg-white text-black py-6 text-base">
+							Join Lab
+						</Button>
+					</Link>
 				</div>
 			</MobileMenu>
 		</header>

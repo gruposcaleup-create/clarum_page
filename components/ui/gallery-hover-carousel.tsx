@@ -91,7 +91,7 @@ export default function GalleryHoverCarousel({
   }, [carouselApi]);
 
   return (
-    <section className="inside-lab-section py-28 lg:py-36 bg-black">
+    <section className="inside-lab-section pt-12 lg:pt-16 pb-28 lg:pb-36 bg-black">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header Row */}
         <div className="mb-10 flex flex-col justify-between md:mb-16 md:flex-row md:items-end gap-6">
